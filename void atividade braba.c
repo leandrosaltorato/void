@@ -1,0 +1,112 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void consumo();
+void idade_em_dias();
+void meses();
+
+
+void consumo(){
+    int km;          
+    float totalcomb, consumo;
+    printf("Digite o numero de km percorridos:  \n");
+    scanf("%d", &km);
+    printf("Digite o total de combustivel gasto:  \n");
+    scanf("%f", &totalcomb);
+    consumo = km / totalcomb;
+    printf("%.3f km/l\n", consumo);
+}
+void idade_em_dias(){
+    int dias, anos, meses, diasrest;
+    printf("Digite sua idade em dias:  \n");
+    scanf("%d", &dias);
+    anos = dias / 365;                
+    dias %= 365;                      
+    meses = dias / 30;                
+    diasrest = dias % 30;      
+    printf("%d ano(s)\n", anos);
+    printf("%d mes(es)\n", meses);
+    printf("%d dia(s)\n", diasrest);
+}
+void meses(){
+    int mes;
+    printf("Digite um numero de 1 a 12:  \n");
+    scanf("%d", &mes);
+    switch(mes) {
+        case 1:
+            printf("January\n");
+            break;
+        case 2:
+            printf("February\n");
+            break;
+        case 3:
+            printf("March\n");
+            break;
+        case 4:
+            printf("April\n");
+            break;
+        case 5:
+            printf("May\n");
+            break;
+        case 6:
+            printf("June\n");
+            break;
+        case 7:
+            printf("July\n");
+            break;
+        case 8:
+            printf("August\n");
+            break;
+        case 9:
+            printf("September\n");
+            break;
+        case 10:
+            printf("October\n");
+            break;
+        case 11:
+            printf("November\n");
+            break;
+        case 12:
+            printf("December\n");
+            break;
+        default:
+        printf("Opção Invalida! Tente Novamente \n");
+    }
+}
+
+int main(){
+    int opção;
+    do {
+
+        printf("1- Consumo\n");
+        printf("2- Idade em dias\n");
+        printf("3- Meses\n");
+        printf("0- Sair\n");
+        scanf("%d", &opção);
+        
+        switch (opção) {
+            case 1:
+                consumo();
+                break;
+            case 2:
+                idade_em_dias();      
+                break;
+            case 3:
+                meses();
+                break;
+            case 0:
+                printf ("Até logo... \n");
+                break;
+            default:
+                printf("Opção Invalida! Tente Novamente \n");
+        }
+        
+        printf ("\n Pressione Enter para continuar");
+        getchar (); 
+        getchar (); 
+        
+        system("clear");
+        
+    }while (opção != 0);
+    return 0;
+}
